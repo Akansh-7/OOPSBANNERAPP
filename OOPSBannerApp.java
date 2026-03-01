@@ -2,32 +2,43 @@ public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Letter O
-        String o1 = String.join("", " ***** ");
-        String o2 = String.join("", "*     *");
-        String o3 = String.join("", "*     *");
-        String o4 = String.join("", "*     *");
-        String o5 = String.join("", " ***** ");
+        // Letter patterns stored as String arrays
+        String[] O = {
+            " ***** ",
+            "*     *",
+            "*     *",
+            "*     *",
+            " ***** "
+        };
 
-        // Letter P
-        String p1 = String.join("", "****** ");
-        String p2 = String.join("", "*     *");
-        String p3 = String.join("", "****** ");
-        String p4 = String.join("", "*      ");
-        String p5 = String.join("", "*      ");
+        String[] P = {
+            "****** ",
+            "*     *",
+            "****** ",
+            "*      ",
+            "*      "
+        };
 
-        // Letter S
-        String s1 = String.join("", " ***** ");
-        String s2 = String.join("", "*      ");
-        String s3 = String.join("", " ***** ");
-        String s4 = String.join("", "      *");
-        String s5 = String.join("", " ***** ");
+        String[] S = {
+            " ***** ",
+            "*      ",
+            " ***** ",
+            "      *",
+            " ***** "
+        };
 
-        // Print OOPS banner line by line
-        System.out.println(o1 + "  " + o1 + "  " + p1 + "  " + s1);
-        System.out.println(o2 + "  " + o2 + "  " + p2 + "  " + s2);
-        System.out.println(o3 + "  " + o3 + "  " + p3 + "  " + s3);
-        System.out.println(o4 + "  " + o4 + "  " + p4 + "  " + s4);
-        System.out.println(o5 + "  " + o5 + "  " + p5 + "  " + s5);
+        // Store letters in order: O O P S
+        String[][] banner = { O, O, P, S };
+
+        // Number of rows in each letter
+        int rows = O.length;
+
+        // Print banner using loops
+        for (int i = 0; i < rows; i++) {
+            for (String[] letter : banner) {
+                System.out.print(letter[i] + "  ");
+            }
+            System.out.println();
+        }
     }
 }
